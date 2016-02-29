@@ -5,7 +5,7 @@ import java.util.Set;
 
 @javax.persistence.Entity(name="One")
 public class One {
-	@javax.persistence.OneToMany(mappedBy="m", cascade = CascadeType.PERSIST)
+	@javax.persistence.OneToMany(mappedBy="one", cascade = CascadeType.PERSIST)
 	protected java.util.Set<Many> many = com.google.common.collect.Sets.newHashSet();
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

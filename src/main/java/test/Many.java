@@ -8,19 +8,19 @@ import javax.persistence.Id;
 @javax.persistence.Entity(name="Many")
 public class Many {
 	@javax.persistence.ManyToOne(cascade = CascadeType.PERSIST)
-	protected One m;
+	protected One one;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long primaryKey;
 
 	public One getOne() {
-		return m;
+		return one;
 	}
 
 	public void setOne(One m) {
-		this.m = m;
-		this.m.getMany().add(this);
+		this.one = m;
+		this.one.getMany().add(this);
 	}
 
 	public Long getPrimaryKey() {
@@ -42,13 +42,13 @@ public class Many {
 
 		if (primaryKey != many.primaryKey)
 			return false;
-		return m != null ? m.equals(many.m) : many.m == null;
+		return one != null ? one.equals(many.one) : many.one == null;
 
 	}
 
 	@Override
 	public int hashCode() {
-		int result = m != null ? m.hashCode() : 0;
+		int result = one != null ? one.hashCode() : 0;
 		result = 31 * result + (int) (primaryKey ^ (primaryKey >>> 32));
 		return result;
 	}
