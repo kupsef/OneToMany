@@ -18,8 +18,8 @@ public class Many {
 		return one;
 	}
 
-	public void setOne(One m) {
-		this.one = m;
+	public void setOne(One one) {
+		this.one = one;
 		this.one.getMany().add(this);
 	}
 
