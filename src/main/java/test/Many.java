@@ -14,11 +14,11 @@ public class Many {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long primaryKey;
 
-	public One getM() {
+	public One getOne() {
 		return m;
 	}
 
-	public void setM(One m) {
+	public void setOne(One m) {
 		this.m = m;
 		this.m.getMany().add(this);
 	}

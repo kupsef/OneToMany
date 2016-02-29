@@ -38,7 +38,7 @@ public class InsertTest {
 
 		for (int i = 0; i < 200; i++) {
 			Many many = new Many();
-			many.setM(one);
+			many.setOne(one);
 			em.persist(many);
 		}
 		em.getTransaction().commit();
